@@ -77,3 +77,5 @@ a pinpoint of the "g" in "marginal" can show where the M1 and M2 lines touch. 40
 - "Aortal" → "Aorta" correction confirmed correct.
 - Dropped the text card "What is another name for the LAD artery?" → "Interventricular artery" (it had been flagged "needs AI check").
 - No other problems reported. Final run 3 set for page-001: 5 hidden-label cards + 6 text cards.
+- Follow-up (Sam): skip all "another name"/synonym cards. Prompt rule added in `cardWriter.ts`; checker rule 8 in `verify.ts`
+  rejects them for any subject. 42 tests pass.

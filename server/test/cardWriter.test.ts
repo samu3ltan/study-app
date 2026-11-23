@@ -70,3 +70,9 @@ test("writeCards surfaces API errors", async () => {
   const fakeFetch = (async () => new Response("overloaded", { status: 529 })) as unknown as typeof fetch;
   await assert.rejects(writeCards({ spans, subject: med, mode: "fast", apiKey: "k", fetchImpl: fakeFetch }), /Anthropic API error 529/);
 });
+
+test("prompt tells the model not to make 'another name' cards", () => {
+  const spans = [{ id: "s1", text: "Left atrium", box: { left: 0.1, top: 0.1, width: 0.1, height: 0.02 }, confidence: 1 }];
+  const req = buildRequest({ spans, subject: med, mode: "fast", apiKey: "k" }) as Record<string, any>;
+  assert.match(req.system, /another name, synonym or alternative term/);
+});

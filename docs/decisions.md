@@ -17,3 +17,4 @@
 Proposed, not yet confirmed: beachhead = US M1/M2 students with labelled diagrams; free Anki export;
 no ECG interpretation or patient data at launch; Free + Plus $7.99/mo or $49.99/yr.
 | 2026-11-22 | Hidden-label boxes must never overlap each other; each box still covers its whole label. Boxes start the same size and are trimmed where neighbours would collide (labels that physically touch are flagged for review) | Overlapping boxes look messy and can hide a neighbour's label | Sam (requirement); Claude (method) |
+| 2026-11-22 | No "another name for X" / synonym cards, in any subject: the AI is told not to make them and the checker rejects them | The page already shows both names together, so these cards add reviews without adding learning | Sam |

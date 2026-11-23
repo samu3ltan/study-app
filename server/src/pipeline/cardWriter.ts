@@ -66,6 +66,7 @@ export function buildRequest(opts: WriteOptions): Record<string, unknown> {
           "Titles, figure captions and legends are not labels.",
         ]),
     "Never put the answer, or words from it, in the question.",
+    'Do not make cards that only ask for another name, synonym or alternative term (e.g. "What is another name for X?", "X is also called ..."); the page already shows both names together.',
     `Make at most ${maxCards} cards, choosing the most important facts first.`,
     opts.mode === "learn"
       ? "Learn mode: prefer cards that ask how or why, plus the key labels."

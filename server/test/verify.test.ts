@@ -105,3 +105,19 @@ test("weakly supported wording is routed to the AI verifier", () => {
   const r = checkCard({ kind: "basic", front: "Role of mitochondria?", back: "They synthesize lipids for membranes", citedSpanIds: ["s1"] }, spans, med);
   assert.equal(r.needsModelCheck, true);
 });
+
+test("'another name' and synonym cards are rejected, in any subject", () => {
+  const spans = page([["s1", "Left anterior descending (LAD) (or interventricular) artery"], ["s2", "Mitochondria (also called the powerhouse of the cell)"]]);
+  const cases: Array<[Parameters<typeof checkCard>[0], typeof med]> = [
+    [{ kind: "basic", front: "What is another name for the LAD artery?", back: "Interventricular artery", citedSpanIds: ["s1"] }, med],
+    [{ kind: "basic", front: "Give a synonym for the LAD.", back: "interventricular artery", citedSpanIds: ["s1"] }, med],
+    [{ kind: "cloze", front: "Mitochondria are also called the {{c1::powerhouse}} of the cell.", back: "", citedSpanIds: ["s2"] }, chem],
+  ];
+  for (const [card, subject] of cases) {
+    const r = checkCard(card, spans, subject);
+    assert.equal(r.ok, false, card.front);
+    assert.ok(r.problems.some((p) => p.includes("another name")), card.front);
+  }
+  const ok = checkCard({ kind: "basic", front: "What does LAD stand for?", back: "Left anterior descending", citedSpanIds: ["s1"] }, spans, med);
+  assert.equal(ok.ok, true, ok.problems.join("; "));
+});

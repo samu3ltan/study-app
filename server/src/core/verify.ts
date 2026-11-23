@@ -175,5 +175,14 @@ export function checkCard(
     }
   }
 
+  // 8. No "another name for X" cards (Sam, 2026-11-22): the page shows both names together,
+  // so these add reviews without adding learning.
+  if (card.kind !== "occlusion" && ALT_NAME.test(plain(card.front))) {
+    problems.push('Cards asking for "another name" or a synonym are not made.');
+    ok = false;
+  }
+
   return { ok, needsConfirmation, needsModelCheck, problems };
 }
+
+const ALT_NAME = /\b(another|other|alternative|alternate)\s+(name|term)s?\b|\bsynonyms?\b|\balso\s+(called|known\s+as|termed|referred\s+to\s+as)\b/i;
