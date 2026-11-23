@@ -25,3 +25,5 @@ eval/benchmark/**/*.png
 eval/benchmark/**/*.heic
 eval/benchmark/**/*.pdf
 eval/benchmark/**/page.preview.html
+# Claude Code personal settings
+.claude/settings.local.json
