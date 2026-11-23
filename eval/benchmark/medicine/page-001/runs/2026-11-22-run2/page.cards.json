@@ -1,0 +1,360 @@
+{
+  "subject": "medicine",
+  "mode": "fast",
+  "groupSize": 4,
+  "labels": [],
+  "rejectedLabels": [
+    {
+      "raw": {
+        "wordIds": [
+          "s1",
+          "s3"
+        ],
+        "text": "Superior vena cava"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s2",
+          "s4"
+        ],
+        "text": "Left pulmonary artery"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s6"
+        ],
+        "text": "Aortal"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s5",
+          "s7"
+        ],
+        "text": "Left pulmonary veins"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s8",
+          "s10"
+        ],
+        "text": "Left coronary artery (LCA)"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s9"
+        ],
+        "text": "Right atrium"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s12",
+          "s14"
+        ],
+        "text": "Right coronary artery (RCA)"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s11",
+          "s13",
+          "s15",
+          "s16"
+        ],
+        "text": "Left anterior descending (LAD) (or interventricular) artery"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s17",
+          "s19",
+          "s21"
+        ],
+        "text": "Posterior descending artery (PDA)"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s18",
+          "s20"
+        ],
+        "text": "(Left) circumflex artery (Cx)"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s22"
+        ],
+        "text": "M1"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s23"
+        ],
+        "text": "M2"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s24",
+          "s25"
+        ],
+        "text": "Right marginal artery (RMA)"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s26"
+        ],
+        "text": "D1"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s27"
+        ],
+        "text": "D2"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s28"
+        ],
+        "text": "Right ventricle"
+      },
+      "reason": "points at words that are not on the page"
+    },
+    {
+      "raw": {
+        "wordIds": [
+          "s29"
+        ],
+        "text": "Left ventricle"
+      },
+      "reason": "points at words that are not on the page"
+    }
+  ],
+  "groups": [],
+  "cards": [
+    {
+      "kind": "basic",
+      "front": "What does LAD stand for in coronary anatomy?",
+      "back": "Left anterior descending artery",
+      "citedSpanIds": [
+        "s11",
+        "s13",
+        "s14"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does LCA stand for?",
+      "back": "Left coronary artery",
+      "citedSpanIds": [
+        "s8",
+        "s10"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does RCA stand for?",
+      "back": "Right coronary artery",
+      "citedSpanIds": [
+        "s12",
+        "s14"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does Cx stand for in the coronary arteries?",
+      "back": "Circumflex artery (left circumflex)",
+      "citedSpanIds": [
+        "s18",
+        "s20"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does PDA stand for?",
+      "back": "Posterior descending artery",
+      "citedSpanIds": [
+        "s17",
+        "s19",
+        "s21"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does RMA stand for?",
+      "back": "Right marginal artery",
+      "citedSpanIds": [
+        "s24",
+        "s25"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "Another name for the left anterior descending artery (LAD)?",
+      "back": "Interventricular artery",
+      "citedSpanIds": [
+        "s13",
+        "s15"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": true,
+        "problems": [
+          "Answer wording is not clearly in the source; sent for AI verification."
+        ]
+      }
+    },
+    {
+      "kind": "cloze",
+      "front": "The left coronary artery branches into the LAD and the {{c1::circumflex}} artery.",
+      "back": "circumflex",
+      "citedSpanIds": [
+        "s8",
+        "s18",
+        "s20"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    }
+  ],
+  "score": {
+    "expected": 17,
+    "matched": [],
+    "missed": [
+      "Superior vena cava",
+      "Aorta",
+      "Right atrium",
+      "Right coronary artery (RCA)",
+      "Posterior descending artery (PDA)",
+      "Right marginal artery (RMA)",
+      "Right ventricle",
+      "Left pulmonary artery",
+      "Left pulmonary veins",
+      "Left coronary artery (LCA)",
+      "Left anterior descending (LAD) (or interventricular) artery",
+      "(Left) circumflex artery (Cx)",
+      "M1",
+      "M2",
+      "D1",
+      "D2",
+      "Left ventricle"
+    ],
+    "extra": [],
+    "recall": 0
+  },
+  "usage": {
+    "layout": {
+      "input_tokens": 3118,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 540,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "text": {
+      "input_tokens": 1812,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 498,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    }
+  }
+}

@@ -31,6 +31,41 @@ export type RawLabel = { wordIds: string[]; text: string; sharedDescription?: st
 export type LabelResult = { labels: Label[]; rejected: Array<{ raw: RawLabel; reason: string }> };
 
 /**
+ * The model may refer to whole lines ("s22") instead of words ("s22.w1"). Expand line ids to
+ * their words; if the label is only part of those words (e.g. "M1" in "M1 Left marginal"),
+ * narrow to the contiguous run of words that best matches the label text.
+ * Returns null if an id is unknown.
+ */
+export function resolveWordIds(ids: string[], text: string, spans: OcrSpan[], words: Map<string, OcrWord & { spanId: string }>): string[] | null {
+  const bySpan = new Map(spans.map((s) => [s.id, s]));
+  const out: string[] = [];
+  let expanded = false;
+  for (const id of ids) {
+    if (words.has(id)) out.push(id);
+    else if (bySpan.has(id)) {
+      const s = bySpan.get(id)!;
+      const ws = s.words && s.words.length > 0 ? s.words.map((w) => w.id) : [s.id];
+      out.push(...ws);
+      expanded = true;
+    } else return null;
+  }
+  if (!expanded || !text.trim()) return out;
+  const target = normalize(text);
+  let best = out;
+  let bestDist = editDistance(normalize(out.map((id) => words.get(id)!.text).join(" ")), target);
+  for (let i = 0; i < out.length; i++)
+    for (let j = i + 1; j <= out.length; j++) {
+      const cand = out.slice(i, j);
+      const d = editDistance(normalize(cand.map((id) => words.get(id)!.text).join(" ")), target);
+      if (d < bestDist) {
+        best = cand;
+        bestDist = d;
+      }
+    }
+  return best;
+}
+
+/**
  * Validate the model's proposed labels against the OCR words:
  * - every word id must exist and no word may be used twice
  * - the printed text may differ from OCR only by a small correction (then the user must confirm)
@@ -42,7 +77,7 @@ export function buildLabels(raw: RawLabel[], spans: OcrSpan[]): LabelResult {
   const rejected: LabelResult["rejected"] = [];
 
   for (const r of raw) {
-    const ids = r.wordIds ?? [];
+    const ids = resolveWordIds(r.wordIds ?? [], r.text ?? "", spans, words) ?? [];
     if (ids.length === 0 || ids.some((id) => !words.has(id))) {
       rejected.push({ raw: r, reason: "points at words that are not on the page" });
       continue;

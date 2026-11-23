@@ -29,3 +29,15 @@ Built: OCR v2 (word boxes + small JPEG for the AI), layout step with the page im
 code-built hidden-label cards with uniform masks and grouping (`src/core/labels.ts`, default group size 1;
 this test uses 4), "question gives away the answer" rule, answer-key scoring (`src/eval/score.ts`),
 one-command runner `scripts/run-page.ts` with a plain-language report. 35 tests pass.
+
+## 2026-11-22 · Run 2 · medicine/page-001 · Fast mode · group size 4 · Claude Haiku 5.5 (image + OCR words)
+
+Result: **0 of 17 labels**. The model named all 17 labels correctly but referred to whole lines ("s1")
+instead of word ids ("s1.w1"), so the label safety check refused every one. It also copied "Aortal"
+from OCR instead of reading the image. 8 text cards (abbreviations) all passed.
+
+Fix: line ids are now accepted and narrowed to the matching words (e.g. "M1" inside "M1 Left marginal");
+the prompt insists on word ids and on reading label text from the image letter by letter.
+Replaying run 2's model output through the fixed code gives **16 of 17** (only "Aortal" wrong) and 5 cards of 3-4 labels.
+Open issue: OCR artifacts the model doesn't correct ("Aortal"). Next idea if run 3 still misses it: a dedicated
+check that re-reads each label from a crop of the image.

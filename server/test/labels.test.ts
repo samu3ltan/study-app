@@ -161,3 +161,18 @@ test("scoring against the answer key uses aliases", () => {
   assert.deepEqual(score.missed, ["Right atrium"]);
   assert.equal(score.extra.length, 0);
 });
+
+test("line ids are accepted and narrowed to the matching words", () => {
+  const { labels, rejected } = buildLabels(
+    [
+      { wordIds: ["s1", "s3"], text: "Superior vena cava" },
+      { wordIds: ["s22"], text: "M1", sharedDescription: "Left marginal arteries" },
+      { wordIds: ["s6"], text: "Aorta" },
+    ],
+    page,
+  );
+  assert.equal(rejected.length, 0, JSON.stringify(rejected));
+  assert.deepEqual(labels[0].wordIds, ["s1.w1", "s3.w1", "s3.w2"]);
+  assert.deepEqual(labels[1].wordIds, ["s22.w1"]);
+  assert.equal(labels[2].corrected, true);
+});

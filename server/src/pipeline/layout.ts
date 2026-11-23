@@ -20,8 +20,8 @@ export const LABEL_TOOL = {
         items: {
           type: "object",
           properties: {
-            wordIds: { type: "array", items: { type: "string" }, minItems: 1, description: "OCR word ids that make up this label, in reading order." },
-            text: { type: "string", description: "The label exactly as printed in the image." },
+            wordIds: { type: "array", items: { type: "string" }, minItems: 1, description: "OCR WORD ids (like \"s22.w1\", not line ids like \"s22\") that make up this label, in reading order." },
+            text: { type: "string", description: "Read this label directly from the IMAGE, letter by letter. Do not just copy the OCR text: OCR can add a letter where a pointer line touches a word (\"Aortal\" for \"Aorta\") or add stray punctuation." },
             sharedDescription: { type: "string", description: "Only for short codes that share one description, e.g. M1 and M2 sharing 'Left marginal arteries'." },
           },
           required: ["wordIds", "text"],
@@ -40,7 +40,8 @@ export function layoutSystemPrompt(subject: SubjectProfile): string {
     "A label often wraps over several lines: include all of its words in reading order.",
     "Keep a full name and its abbreviation together as one label, e.g. 'Right coronary artery (RCA)'.",
     "When several short codes share one description (e.g. 'M1', 'M2' next to 'Left marginal arteries'), make each code its own label containing only the code's word id, and put the description in sharedDescription. Do not include the description words in any label.",
-    "Copy the text exactly as printed in the image. OCR sometimes misreads a character or picks up part of a pointer line (e.g. 'Aortal' for 'Aorta', or a stray '.'); in that case write what the image actually shows. Never rename, expand or reword a label.",
+    "For each label's text, read the IMAGE letter by letter. OCR sometimes misreads a character or picks up part of a pointer line as a letter or a dot; when the image differs from the OCR text, write what the image shows. Never rename, expand or reword a label.",
+    "Refer to words by their word ids (e.g. s22.w1), not line ids.",
     "Use each word id at most once. Do not invent word ids.",
     `Subject: ${subject.name}.`,
   ].join("\n");
