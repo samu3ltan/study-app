@@ -1,0 +1,1025 @@
+{
+  "subject": "medicine",
+  "mode": "fast",
+  "groupSize": 4,
+  "labels": [
+    {
+      "id": "L1",
+      "wordIds": [
+        "s1.w1",
+        "s3.w1",
+        "s3.w2"
+      ],
+      "spanIds": [
+        "s1",
+        "s3"
+      ],
+      "text": "Superior vena cava",
+      "ocrText": "Superior vena cava",
+      "corrected": false,
+      "box": {
+        "left": 0.10912343470624981,
+        "top": 0.03133908808218078,
+        "width": 0.12022214815981165,
+        "height": 0.07172497877018691
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.10912343470624981,
+        "top": 0.03133908808218078,
+        "width": 0.12022214815981165,
+        "height": 0.07172497877018691
+      },
+      "mask": {
+        "left": 0.05689998529178347,
+        "top": 0,
+        "width": 0.22466904698874435,
+        "height": 0.14386816778910827
+      }
+    },
+    {
+      "id": "L2",
+      "wordIds": [
+        "s6.w1"
+      ],
+      "spanIds": [
+        "s6"
+      ],
+      "text": "Aorta",
+      "ocrText": "Aortal",
+      "corrected": true,
+      "box": {
+        "left": 0.16620818833583037,
+        "top": 0.18867226872584886,
+        "width": 0.06293245974081788,
+        "height": 0.034911729499157995
+      },
+      "flags": [
+        "Spelling corrected from \"Aortal\" to \"Aorta\". Please confirm."
+      ],
+      "cover": {
+        "left": 0.16620818833583037,
+        "top": 0.18867226872584886,
+        "width": 0.06293245974081788,
+        "height": 0.034911729499157995
+      },
+      "mask": {
+        "left": 0.08533989471186715,
+        "top": 0.14786816778910827,
+        "width": 0.22466904698874435,
+        "height": 0.1146486585696122
+      }
+    },
+    {
+      "id": "L3",
+      "wordIds": [
+        "s9.w1",
+        "s9.w2"
+      ],
+      "spanIds": [
+        "s9"
+      ],
+      "text": "Right atrium",
+      "ocrText": "Right atrium",
+      "corrected": false,
+      "box": {
+        "left": 0.09290462529248945,
+        "top": 0.3054496544924341,
+        "width": 0.13619433146431165,
+        "height": 0.04369679083385025
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.09290462529248945,
+        "top": 0.3054496544924341,
+        "width": 0.13619433146431165,
+        "height": 0.04369679083385025
+      },
+      "mask": {
+        "left": 0.04866726753027312,
+        "top": 0.2665168263587205,
+        "width": 0.22466904698874435,
+        "height": 0.11860648120996808
+      }
+    },
+    {
+      "id": "L4",
+      "wordIds": [
+        "s12.w1",
+        "s12.w2",
+        "s14.w1",
+        "s14.w2"
+      ],
+      "spanIds": [
+        "s12",
+        "s14"
+      ],
+      "text": "Right coronary artery (RCA)",
+      "ocrText": "Right coronary artery (RCA)",
+      "corrected": false,
+      "box": {
+        "left": 0.04804924813345725,
+        "top": 0.4251001698110928,
+        "width": 0.18138418551456148,
+        "height": 0.08030807311223775
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.04804924813345725,
+        "top": 0.4251001698110928,
+        "width": 0.18138418551456148,
+        "height": 0.08030807311223775
+      },
+      "mask": {
+        "left": 0.0264068173963658,
+        "top": 0.38912330756868857,
+        "width": 0.22466904698874435,
+        "height": 0.14421000877055462
+      }
+    },
+    {
+      "id": "L5",
+      "wordIds": [
+        "s17.w1",
+        "s19.w1",
+        "s21.w1",
+        "s21.w2"
+      ],
+      "spanIds": [
+        "s17",
+        "s19",
+        "s21"
+      ],
+      "text": "Posterior descending artery (PDA)",
+      "ocrText": "Posterior descending artery (PDA)",
+      "corrected": false,
+      "box": {
+        "left": 0.0839146967691852,
+        "top": 0.5652583897551559,
+        "width": 0.14522964507308403,
+        "height": 0.12140462308841482
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.0839146967691852,
+        "top": 0.5652583897551559,
+        "width": 0.14522964507308403,
+        "height": 0.12140462308841482
+      },
+      "mask": {
+        "left": 0.04419499581135505,
+        "top": 0.5417447545024014,
+        "width": 0.22466904698874435,
+        "height": 0.16843189359392385
+      }
+    },
+    {
+      "id": "L6",
+      "wordIds": [
+        "s24.w1",
+        "s24.w2",
+        "s25.w1",
+        "s25.w2"
+      ],
+      "spanIds": [
+        "s24",
+        "s25"
+      ],
+      "text": "Right marginal artery (RMA)",
+      "ocrText": "Right marginal artery (RMA)",
+      "corrected": false,
+      "box": {
+        "left": 0.06389233094802767,
+        "top": 0.7402730519724882,
+        "width": 0.1654804542014212,
+        "height": 0.0790049719362399
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.06389233094802767,
+        "top": 0.7402730519724882,
+        "width": 0.1654804542014212,
+        "height": 0.0790049719362399
+      },
+      "mask": {
+        "left": 0.034298034554366086,
+        "top": 0.7154680324080294,
+        "width": 0.22466904698874435,
+        "height": 0.13528646436238434
+      }
+    },
+    {
+      "id": "L7",
+      "wordIds": [
+        "s28.w1",
+        "s28.w2"
+      ],
+      "spanIds": [
+        "s28"
+      ],
+      "text": "Right ventricle",
+      "ocrText": "Right ventricle",
+      "corrected": false,
+      "box": {
+        "left": 0.06769747778088063,
+        "top": 0.8862309696320992,
+        "width": 0.1615048766628599,
+        "height": 0.04391366262740015
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.06769747778088063,
+        "top": 0.8862309696320992,
+        "width": 0.1615048766628599,
+        "height": 0.04391366262740015
+      },
+      "mask": {
+        "left": 0.03611539261793839,
+        "top": 0.8547544967704137,
+        "width": 0.22466904698874435,
+        "height": 0.1376492509723476
+      }
+    },
+    {
+      "id": "L8",
+      "wordIds": [
+        "s2.w1",
+        "s2.w2",
+        "s4.w1"
+      ],
+      "spanIds": [
+        "s2",
+        "s4"
+      ],
+      "text": "Left pulmonary artery",
+      "ocrText": "Left pulmonary artery",
+      "corrected": false,
+      "box": {
+        "left": 0.7448398598399669,
+        "top": 0.06716462765193809,
+        "width": 0.17175141517466863,
+        "height": 0.08240481880881567
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.7448398598399669,
+        "top": 0.06716462765193809,
+        "width": 0.17175141517466863,
+        "height": 0.08240481880881567
+      },
+      "mask": {
+        "left": 0.718381043932929,
+        "top": 0.024151090259384,
+        "width": 0.22466904698874435,
+        "height": 0.13359185024118786
+      }
+    },
+    {
+      "id": "L9",
+      "wordIds": [
+        "s5.w1",
+        "s5.w2",
+        "s7.w1"
+      ],
+      "spanIds": [
+        "s5",
+        "s7"
+      ],
+      "text": "Left pulmonary veins",
+      "ocrText": "Left pulmonary veins",
+      "corrected": false,
+      "box": {
+        "left": 0.7458644650051136,
+        "top": 0.16991643454038996,
+        "width": 0.17005682123462462,
+        "height": 0.07023455609499485
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.7458644650051136,
+        "top": 0.16991643454038996,
+        "width": 0.17005682123462462,
+        "height": 0.07023455609499485
+      },
+      "mask": {
+        "left": 0.7185583521280536,
+        "top": 0.16174294050057186,
+        "width": 0.22466904698874435,
+        "height": 0.09333552799908296
+      }
+    },
+    {
+      "id": "L10",
+      "wordIds": [
+        "s8.w1",
+        "s8.w2",
+        "s10.w1",
+        "s10.w2"
+      ],
+      "spanIds": [
+        "s8",
+        "s10"
+      ],
+      "text": "Left coronary artery (LCA)",
+      "ocrText": "Left coronary artery (LCA)",
+      "corrected": false,
+      "box": {
+        "left": 0.7457280838627726,
+        "top": 0.27400594636392483,
+        "width": 0.16341568832132325,
+        "height": 0.07766498175479863
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.7457280838627726,
+        "top": 0.27400594636392483,
+        "width": 0.16341568832132325,
+        "height": 0.07766498175479863
+      },
+      "mask": {
+        "left": 0.715101404529062,
+        "top": 0.2590784684996548,
+        "width": 0.22466904698874435,
+        "height": 0.10835031032293807
+      }
+    },
+    {
+      "id": "L11",
+      "wordIds": [
+        "s11.w1",
+        "s11.w2",
+        "s13.w1",
+        "s13.w2",
+        "s15.w1",
+        "s15.w2",
+        "s16.w1"
+      ],
+      "spanIds": [
+        "s11",
+        "s13",
+        "s15",
+        "s16"
+      ],
+      "text": "Left anterior descending (LAD) (or interventricular) artery",
+      "ocrText": "Left anterior descending (LAD) (or interventricular). artery",
+      "corrected": true,
+      "box": {
+        "left": 0.7459749576247684,
+        "top": 0.3871866295264623,
+        "width": 0.21466904698874434,
+        "height": 0.15843189359392384
+      },
+      "flags": [
+        "Spelling corrected from \"Left anterior descending (LAD) (or interventricular). artery\" to \"Left anterior descending (LAD) (or interventricular) artery\". Please confirm."
+      ],
+      "cover": {
+        "left": 0.7459749576247684,
+        "top": 0.3871866295264623,
+        "width": 0.21466904698874434,
+        "height": 0.15843189359392384
+      },
+      "mask": {
+        "left": 0.7409749576247684,
+        "top": 0.3821866295264623,
+        "width": 0.22466904698874435,
+        "height": 0.16843189359392385
+      }
+    },
+    {
+      "id": "L12",
+      "wordIds": [
+        "s18.w1",
+        "s18.w2",
+        "s20.w1",
+        "s20.w2"
+      ],
+      "spanIds": [
+        "s18",
+        "s20"
+      ],
+      "text": "(Left) circumflex artery (Cx)",
+      "ocrText": "(Left) circumflex artery (Cx)",
+      "corrected": false,
+      "box": {
+        "left": 0.7457697613468478,
+        "top": 0.5766016713091922,
+        "width": 0.18446279444574887,
+        "height": 0.07874732122909445
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.7457697613468478,
+        "top": 0.5766016713091922,
+        "width": 0.18446279444574887,
+        "height": 0.07874732122909445
+      },
+      "mask": {
+        "left": 0.72566663507535,
+        "top": 0.5631100972147891,
+        "width": 0.22466904698874435,
+        "height": 0.09797251561365805
+      }
+    },
+    {
+      "id": "L13",
+      "wordIds": [
+        "s22.w1"
+      ],
+      "spanIds": [
+        "s22"
+      ],
+      "text": "M1",
+      "ocrText": "M1",
+      "corrected": false,
+      "sharedDescription": "Left marginal arteries",
+      "box": {
+        "left": 0.7455707186033701,
+        "top": 0.6708162331186077,
+        "width": 0.039417911727441246,
+        "height": 0.04183550996700702
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.7455707186033701,
+        "top": 0.6708162331186077,
+        "width": 0.19753830440211562,
+        "height": 0.046710950299996834
+      },
+      "mask": {
+        "left": 0.7320053473100556,
+        "top": 0.6650826128284472,
+        "width": 0.22466904698874435,
+        "height": 0.04924151519059927
+      }
+    },
+    {
+      "id": "L14",
+      "wordIds": [
+        "s23.w1"
+      ],
+      "spanIds": [
+        "s23"
+      ],
+      "text": "M2",
+      "ocrText": "M2",
+      "corrected": false,
+      "sharedDescription": "Left marginal arteries",
+      "box": {
+        "left": 0.7456716828406881,
+        "top": 0.7137875854820723,
+        "width": 0.042333261698004665,
+        "height": 0.03652585382913154
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.7456716828406881,
+        "top": 0.7111210726194884,
+        "width": 0.13651986869202792,
+        "height": 0.03919236669171544
+      },
+      "mask": {
+        "left": 0.7015970936923299,
+        "top": 0.7143241280190464,
+        "width": 0.22466904698874435,
+        "height": 0.05300199427424679
+      }
+    },
+    {
+      "id": "L15",
+      "wordIds": [
+        "s26.w1"
+      ],
+      "spanIds": [
+        "s26"
+      ],
+      "text": "D1",
+      "ocrText": "D1",
+      "corrected": false,
+      "sharedDescription": "Diagonal branches",
+      "box": {
+        "left": 0.747206027953467,
+        "top": 0.7883388052753827,
+        "width": 0.03799035681381635,
+        "height": 0.03760299709181936
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.747206027953467,
+        "top": 0.7883388052753827,
+        "width": 0.14571654549200275,
+        "height": 0.03901782877328752
+      },
+      "mask": {
+        "left": 0.7077297772050961,
+        "top": 0.7713261222932932,
+        "width": 0.22466904698874435,
+        "height": 0.05600121980067985
+      }
+    },
+    {
+      "id": "L16",
+      "wordIds": [
+        "s27.w1"
+      ],
+      "spanIds": [
+        "s27"
+      ],
+      "text": "D2",
+      "ocrText": "D2",
+      "corrected": false,
+      "sharedDescription": "Diagonal branches",
+      "box": {
+        "left": 0.7477638640557117,
+        "top": 0.8272980501392758,
+        "width": 0.03756708407871201,
+        "height": 0.03342618384401108
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.7477638640557117,
+        "top": 0.8272980501392758,
+        "width": 0.14847942701891137,
+        "height": 0.03342618384401108
+      },
+      "mask": {
+        "left": 0.7096690540707953,
+        "top": 0.8273273420939731,
+        "width": 0.22466904698874435,
+        "height": 0.04810998381131948
+      }
+    },
+    {
+      "id": "L17",
+      "wordIds": [
+        "s29.w1",
+        "s29.w2"
+      ],
+      "spanIds": [
+        "s29"
+      ],
+      "text": "Left ventricle",
+      "ocrText": "Left ventricle",
+      "corrected": false,
+      "box": {
+        "left": 0.745974955416964,
+        "top": 0.8941504178272981,
+        "width": 0.14490160804772378,
+        "height": 0.03621169916434541
+      },
+      "flags": [],
+      "cover": {
+        "left": 0.745974955416964,
+        "top": 0.8941504178272981,
+        "width": 0.14490160804772378,
+        "height": 0.03621169916434541
+      },
+      "mask": {
+        "left": 0.7060912359464537,
+        "top": 0.8794373259052926,
+        "width": 0.22466904698874435,
+        "height": 0.11703488830114017
+      }
+    }
+  ],
+  "rejectedLabels": [],
+  "groups": [
+    [
+      "L1",
+      "L2",
+      "L3",
+      "L4"
+    ],
+    [
+      "L5",
+      "L6",
+      "L7"
+    ],
+    [
+      "L8",
+      "L9",
+      "L10",
+      "L11"
+    ],
+    [
+      "L12",
+      "L13",
+      "L14"
+    ],
+    [
+      "L15",
+      "L16",
+      "L17"
+    ]
+  ],
+  "cards": [
+    {
+      "kind": "occlusion",
+      "front": "Name the 4 hidden labels.",
+      "back": "1. Superior vena cava\n2. Aorta\n3. Right atrium\n4. Right coronary artery (RCA)",
+      "citedSpanIds": [
+        "s1",
+        "s3",
+        "s6",
+        "s9",
+        "s12",
+        "s14"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s1",
+          "s3",
+          "s6",
+          "s9",
+          "s12",
+          "s14"
+        ],
+        "labelIds": [
+          "L1",
+          "L2",
+          "L3",
+          "L4"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": true,
+        "needsModelCheck": false,
+        "problems": [
+          "Spelling corrected from \"Aortal\" to \"Aorta\". Please confirm."
+        ]
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the 3 hidden labels.",
+      "back": "1. Posterior descending artery (PDA)\n2. Right marginal artery (RMA)\n3. Right ventricle",
+      "citedSpanIds": [
+        "s17",
+        "s19",
+        "s21",
+        "s24",
+        "s25",
+        "s28"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s17",
+          "s19",
+          "s21",
+          "s24",
+          "s25",
+          "s28"
+        ],
+        "labelIds": [
+          "L5",
+          "L6",
+          "L7"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the 4 hidden labels.",
+      "back": "1. Left pulmonary artery\n2. Left pulmonary veins\n3. Left coronary artery (LCA)\n4. Left anterior descending (LAD) (or interventricular) artery",
+      "citedSpanIds": [
+        "s2",
+        "s4",
+        "s5",
+        "s7",
+        "s8",
+        "s10",
+        "s11",
+        "s13",
+        "s15",
+        "s16"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s2",
+          "s4",
+          "s5",
+          "s7",
+          "s8",
+          "s10",
+          "s11",
+          "s13",
+          "s15",
+          "s16"
+        ],
+        "labelIds": [
+          "L8",
+          "L9",
+          "L10",
+          "L11"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": true,
+        "needsModelCheck": false,
+        "problems": [
+          "Spelling corrected from \"Left anterior descending (LAD) (or interventricular). artery\" to \"Left anterior descending (LAD) (or interventricular) artery\". Please confirm."
+        ]
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the 3 hidden labels.",
+      "back": "1. (Left) circumflex artery (Cx)\n2. M1 (Left marginal arteries)\n3. M2 (Left marginal arteries)",
+      "citedSpanIds": [
+        "s18",
+        "s20",
+        "s22",
+        "s23"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s18",
+          "s20",
+          "s22",
+          "s23"
+        ],
+        "labelIds": [
+          "L12",
+          "L13",
+          "L14"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the 3 hidden labels.",
+      "back": "1. D1 (Diagonal branches)\n2. D2 (Diagonal branches)\n3. Left ventricle",
+      "citedSpanIds": [
+        "s26",
+        "s27",
+        "s29"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s26",
+          "s27",
+          "s29"
+        ],
+        "labelIds": [
+          "L15",
+          "L16",
+          "L17"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does LCA stand for?",
+      "back": "Left coronary artery",
+      "citedSpanIds": [
+        "s8",
+        "s10"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does LAD stand for?",
+      "back": "Left anterior descending (artery)",
+      "citedSpanIds": [
+        "s11",
+        "s13"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does Cx stand for?",
+      "back": "Circumflex artery",
+      "citedSpanIds": [
+        "s18",
+        "s20"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does PDA stand for?",
+      "back": "Posterior descending artery",
+      "citedSpanIds": [
+        "s17",
+        "s19",
+        "s21"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does RMA stand for?",
+      "back": "Right marginal artery",
+      "citedSpanIds": [
+        "s24",
+        "s25"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does RCA stand for?",
+      "back": "Right coronary artery",
+      "citedSpanIds": [
+        "s12",
+        "s14"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What is another name for the LAD artery?",
+      "back": "Interventricular artery",
+      "citedSpanIds": [
+        "s15",
+        "s11"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": true,
+        "problems": [
+          "Answer wording is not clearly in the source; sent for AI verification."
+        ]
+      }
+    }
+  ],
+  "score": {
+    "expected": 17,
+    "matched": [
+      {
+        "expected": "Superior vena cava",
+        "got": "Superior vena cava",
+        "corrected": false
+      },
+      {
+        "expected": "Aorta",
+        "got": "Aorta",
+        "corrected": true
+      },
+      {
+        "expected": "Right atrium",
+        "got": "Right atrium",
+        "corrected": false
+      },
+      {
+        "expected": "Right coronary artery (RCA)",
+        "got": "Right coronary artery (RCA)",
+        "corrected": false
+      },
+      {
+        "expected": "Posterior descending artery (PDA)",
+        "got": "Posterior descending artery (PDA)",
+        "corrected": false
+      },
+      {
+        "expected": "Right marginal artery (RMA)",
+        "got": "Right marginal artery (RMA)",
+        "corrected": false
+      },
+      {
+        "expected": "Right ventricle",
+        "got": "Right ventricle",
+        "corrected": false
+      },
+      {
+        "expected": "Left pulmonary artery",
+        "got": "Left pulmonary artery",
+        "corrected": false
+      },
+      {
+        "expected": "Left pulmonary veins",
+        "got": "Left pulmonary veins",
+        "corrected": false
+      },
+      {
+        "expected": "Left coronary artery (LCA)",
+        "got": "Left coronary artery (LCA)",
+        "corrected": false
+      },
+      {
+        "expected": "Left anterior descending (LAD) (or interventricular) artery",
+        "got": "Left anterior descending (LAD) (or interventricular) artery",
+        "corrected": true
+      },
+      {
+        "expected": "(Left) circumflex artery (Cx)",
+        "got": "(Left) circumflex artery (Cx)",
+        "corrected": false
+      },
+      {
+        "expected": "M1",
+        "got": "M1",
+        "corrected": false
+      },
+      {
+        "expected": "M2",
+        "got": "M2",
+        "corrected": false
+      },
+      {
+        "expected": "D1",
+        "got": "D1",
+        "corrected": false
+      },
+      {
+        "expected": "D2",
+        "got": "D2",
+        "corrected": false
+      },
+      {
+        "expected": "Left ventricle",
+        "got": "Left ventricle",
+        "corrected": false
+      }
+    ],
+    "missed": [],
+    "extra": [],
+    "recall": 1
+  },
+  "usage": {
+    "layout": {
+      "input_tokens": 3226,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 776,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    },
+    "text": {
+      "input_tokens": 1962,
+      "cache_creation_input_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_creation": {
+        "ephemeral_5m_input_tokens": 0,
+        "ephemeral_1h_input_tokens": 0
+      },
+      "output_tokens": 395,
+      "output_tokens_details": {
+        "thinking_tokens": 0
+      },
+      "service_tier": "standard",
+      "inference_geo": "global",
+      "speed": "standard"
+    }
+  }
+}

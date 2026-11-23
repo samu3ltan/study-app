@@ -24,3 +24,4 @@ eval/benchmark/**/*.jpeg
 eval/benchmark/**/*.png
 eval/benchmark/**/*.heic
 eval/benchmark/**/*.pdf
+eval/benchmark/**/page.preview.html

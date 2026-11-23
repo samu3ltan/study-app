@@ -26,6 +26,7 @@ export type Label = {
   corrected: boolean;
   sharedDescription?: string; // e.g. "Left marginal arteries" for codes M1/M2
   box: Rect; // union of the word boxes
+  cover?: Rect; // area to hide: the label plus any leftover words on its lines (e.g. "Left marginal" next to "M1")
   mask?: Rect; // uniform-size mask for this label (set when cards are built)
   flags: string[]; // things the user must confirm
 };

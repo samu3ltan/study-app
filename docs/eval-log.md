@@ -41,3 +41,34 @@ the prompt insists on word ids and on reading label text from the image letter b
 Replaying run 2's model output through the fixed code gives **16 of 17** (only "Aortal" wrong) and 5 cards of 3-4 labels.
 Open issue: OCR artifacts the model doesn't correct ("Aortal"). Next idea if run 3 still misses it: a dedicated
 check that re-reads each label from a crop of the image.
+
+## 2026-11-22 · Run 3 · medicine/page-001 · Fast mode · group size 4 · Claude Haiku 5.5 (image + OCR words)
+
+Run in Claude Code on the Mac (OCR v2 rebuilt; 36 tests pass). Raw outputs: `eval/benchmark/medicine/page-001/runs/2026-11-22-run3/`.
+The replay of run 2 through the fixed code (what was in the page folder before run 3) is saved as `runs/2026-11-22-run2/page.*.replay.*`.
+`runs/2026-11-22-run3/` holds run 3 as produced; the page folder's `page.cards.json` has run 3 with the newer boxes below.
+
+| Measure | Result |
+| --- | --- |
+| Labels found | **17 of 17**, none rejected by the label safety check |
+| Hidden-label cards | 5 (4, 3, 4, 3, 3 labels) |
+| "Aortal" | corrected to "Aorta" from the image, shown to Sam for a tap to confirm |
+| Stray "." in the LAD label | removed, shown to Sam for a tap to confirm |
+| Text cards | 7: 6 abbreviation cards passed; 1 ("another name for the LAD artery?" → "Interventricular artery") flagged "needs AI check" |
+| Tokens | layout 3,226 in / 776 out; text cards 1,962 in / 395 out |
+
+Open: the "needs AI check" step is only a flag; no second AI pass runs yet, so flagged cards stay unverified.
+Grouping splits the page by region but some groups have 3 labels (17 isn't divisible by 4). Awaiting Sam's medical review.
+
+### Change after run 3 (2026-11-22): no overlapping boxes
+Sam asked that hidden-label boxes never overlap. New `separateMasks`/`pageMasks` in `src/core/geometry.ts` trims
+uniform boxes along a line halfway between neighbouring labels. On page-001: 20 overlapping pairs → 0; all boxes keep the
+same width, heights vary (0.048–0.168 of the page) where labels are stacked. Run 3's cards were re-masked without a new AI
+call. `scripts/preview-cards.ts` shows cards as a student sees them. 38 tests pass.
+
+### Change (2026-11-22): boxes hide whole lines of text
+Sam saw text peeking out beside the D1, D2 and M1 boxes. Cause: a box covered only the code ("M1") and cut through the
+description beside it ("Left marginal"). Fix: a label's box now also hides the leftover words on its own lines
+(`addCovers` in `src/core/labels.ts`). The OCR boxes of tightly stacked lines overlap slightly, so a small overlap is now split
+down the middle instead of giving up (`separateMasks`). Checked by drawing the boxes on the page: all text hidden, 0 overlaps;
+a pinpoint of the "g" in "marginal" can show where the M1 and M2 lines touch. 40 tests pass.

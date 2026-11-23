@@ -1,5 +1,5 @@
 import type { CheckedCardLike, Label, OcrSpan, OcrWord, Rect } from "./types.ts";
-import { union, uniformMasks } from "./geometry.ts";
+import { pageMasks, union } from "./geometry.ts";
 import { normalize } from "./verify.ts";
 
 /**
@@ -119,7 +119,30 @@ export function buildLabels(raw: RawLabel[], spans: OcrSpan[]): LabelResult {
       flags,
     });
   }
+  addCovers(labels, spans, used);
   return { labels, rejected };
+}
+
+/**
+ * A label's box must also hide words printed on the same line that no label claimed,
+ * e.g. "Left marginal" beside "M1", so a box never cuts through a line of text.
+ * A leftover word goes to the horizontally nearest label on its line.
+ */
+export function addCovers(labels: Label[], spans: OcrSpan[], used: Set<string>): void {
+  const words = indexWords(spans);
+  const extra = new Map<string, Rect[]>(labels.map((l) => [l.id, []]));
+  const gapX = (a: Rect, b: Rect) => Math.max(0, a.left - (b.left + b.width), b.left - (a.left + a.width));
+  for (const [id, w] of words) {
+    if (used.has(id)) continue;
+    const onLine = labels.filter((l) => l.spanIds.includes(w.spanId));
+    if (onLine.length === 0) continue;
+    const nearest = onLine.reduce((a, b) => (gapX(b.box, w.box) < gapX(a.box, w.box) ? b : a));
+    extra.get(nearest.id)!.push(w.box);
+  }
+  for (const l of labels) {
+    const more = extra.get(l.id)!;
+    l.cover = more.length > 0 ? union([l.box, ...more]) : l.box;
+  }
 }
 
 /**
@@ -150,10 +173,17 @@ export function groupLabels(labels: Label[], size: number): Label[][] {
 
 const answerText = (l: Label) => (l.sharedDescription ? `${l.text} (${l.sharedDescription})` : l.text);
 
-/** Build one occlusion card per group. Masks are uniform across the whole page. */
+/**
+ * Build one occlusion card per group. Masks start uniform across the page, then are trimmed
+ * so no two masks overlap (each still covers its whole label).
+ */
 export function buildOcclusionCards(labels: Label[], groupSize: number): { cards: CheckedCardLike[]; groups: Label[][] } {
-  const masks = uniformMasks(labels.map((l) => l.box));
+  const { masks, unavoidable } = pageMasks(labels.map((l) => l.cover ?? l.box));
   labels.forEach((l, i) => (l.mask = masks[i]));
+  for (const [i, j] of unavoidable) {
+    const msg = `"${labels[i].text}" and "${labels[j].text}" touch on the page, so their boxes overlap. Please check.`;
+    for (const k of [i, j]) if (!labels[k].flags.includes(msg)) labels[k].flags.push(msg);
+  }
   const groups = groupLabels(labels, groupSize);
   const cards = groups.map((g) => {
     const flags = g.flatMap((l) => l.flags);

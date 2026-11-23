@@ -28,6 +28,7 @@ Requires Node 22.18+ (runs TypeScript directly, no build step).
     tools/ocr/.build/release/ocr $P/page.png --small $P/page.small.jpg > $P/page.ocr.json
     cd server && node scripts/run-page.ts ../$P --subject medicine --mode fast --group 4
 Writes `page.cards.json` and a plain-language `page.report.md` into the page folder.
+To see the cards as a student would: `node scripts/preview-cards.ts ../$P` (writes `page.preview.html`).
 
 ## Next
 1. Compile and test `../tools/ocr` on the Mac

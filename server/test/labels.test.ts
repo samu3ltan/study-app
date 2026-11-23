@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { buildLabels, buildOcclusionCards, editDistance, groupLabels } from "../src/core/labels.ts";
-import { toAnkiOcclusionGroups } from "../src/core/geometry.ts";
+import { overlaps, toAnkiOcclusionGroups } from "../src/core/geometry.ts";
 import { checkCard } from "../src/core/verify.ts";
 import { getSubject } from "../src/core/subjects/index.ts";
 import { scoreLabels } from "../src/eval/score.ts";
@@ -175,4 +175,29 @@ test("line ids are accepted and narrowed to the matching words", () => {
   assert.deepEqual(labels[0].wordIds, ["s1.w1", "s3.w1", "s3.w2"]);
   assert.deepEqual(labels[1].wordIds, ["s22.w1"]);
   assert.equal(labels[2].corrected, true);
+});
+
+test("a code's box also hides the rest of its line, and no box cuts through any word", () => {
+  const { labels } = buildLabels(
+    [
+      { wordIds: ["s22.w1"], text: "M1", sharedDescription: "Left marginal arteries" },
+      { wordIds: ["s23.w1"], text: "M2", sharedDescription: "Left marginal arteries" },
+      { wordIds: ["s6.w1"], text: "Aorta" },
+      { wordIds: ["s11.w1", "s11.w2", "s13.w1", "s13.w2", "s15.w1", "s15.w2", "s16.w1"], text: "Left anterior descending (LAD) (or interventricular) artery" },
+    ],
+    page,
+  );
+  buildOcclusionCards(labels, 1);
+  const m1 = labels.find((l) => l.text === "M1")!;
+  const s22 = page.find((s) => s.id === "s22")!;
+  const last = s22.words!.at(-1)!.box;
+  assert.equal(m1.cover!.left, s22.box.left, "M1's box starts at 'M1'");
+  assert.ok(Math.abs(m1.cover!.left + m1.cover!.width - (last.left + last.width)) < 1e-9, "and runs to the end of 'marginal'");
+  const inside = (o: { left: number; top: number; width: number; height: number }, i: typeof o) =>
+    o.left <= i.left + 1e-9 && o.top <= i.top + 1e-9 && o.left + o.width >= i.left + i.width - 1e-9 && o.top + o.height >= i.top + i.height - 1e-9;
+  for (const l of labels) for (const k of labels) if (l !== k) assert.ok(!overlaps(l.mask!, k.mask!), `${l.text} / ${k.text} overlap`);
+  for (const s of page)
+    for (const w of s.words!)
+      for (const l of labels)
+        if (overlaps(l.mask!, w.box)) assert.ok(inside(l.mask!, w.box), `box for ${l.text} cuts through "${w.text}"`);
 });
