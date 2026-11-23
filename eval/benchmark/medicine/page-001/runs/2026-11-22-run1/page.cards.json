@@ -1,0 +1,305 @@
+{
+  "subject": "medicine",
+  "mode": "fast",
+  "usage": {
+    "input_tokens": 1786,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 1118,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "cards": [
+    {
+      "kind": "occlusion",
+      "front": "Name the hidden label (top left, vessel entering right atrium)",
+      "back": "Superior vena cava",
+      "citedSpanIds": [
+        "s1",
+        "s3"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s1",
+          "s3"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the hidden label (upper left, aorta origin)",
+      "back": "Aortal",
+      "citedSpanIds": [
+        "s6"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s6"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the hidden label (right side, artery supplying the right heart margin)",
+      "back": "Right coronary artery (RCA)",
+      "citedSpanIds": [
+        "s12",
+        "s14"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s12",
+          "s14"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the hidden label (right side, anterior interventricular branch)",
+      "back": "Left anterior descending artery (LAD)",
+      "citedSpanIds": [
+        "s11",
+        "s13"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s11",
+          "s13"
+        ]
+      },
+      "check": {
+        "ok": false,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": [
+          "Answer \"Left anterior descending artery (LAD)\" does not match the label on the page (\"left anterior descending (lad)\")."
+        ]
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the hidden label (right side, artery branching from left coronary)",
+      "back": "Left circumflex artery (Cx)",
+      "citedSpanIds": [
+        "s18",
+        "s20"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s18",
+          "s20"
+        ]
+      },
+      "check": {
+        "ok": false,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": [
+          "Answer \"Left circumflex artery (Cx)\" does not match the label on the page (\"(left) circumflex artery (cx)\")."
+        ]
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the hidden label (lower left, posterior descending artery)",
+      "back": "Posterior descending artery (PDA)",
+      "citedSpanIds": [
+        "s17",
+        "s19",
+        "s21"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s17",
+          "s19",
+          "s21"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the hidden label (lower left, right marginal branch)",
+      "back": "Right marginal artery (RMA)",
+      "citedSpanIds": [
+        "s24",
+        "s25"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s24",
+          "s25"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the hidden label (right side, first branch of the circumflex)",
+      "back": "M1 Left marginal",
+      "citedSpanIds": [
+        "s22"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s22"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": true,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "occlusion",
+      "front": "Name the hidden label (right side, diagonal branch of LAD)",
+      "back": "D1 Diagonal",
+      "citedSpanIds": [
+        "s26"
+      ],
+      "occlusion": {
+        "spanIds": [
+          "s26"
+        ]
+      },
+      "check": {
+        "ok": true,
+        "needsConfirmation": true,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does LCA stand for?",
+      "back": "Left coronary artery",
+      "citedSpanIds": [
+        "s8",
+        "s10"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does RCA stand for?",
+      "back": "Right coronary artery",
+      "citedSpanIds": [
+        "s12",
+        "s14"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does LAD stand for?",
+      "back": "Left anterior descending artery (also called interventricular)",
+      "citedSpanIds": [
+        "s11",
+        "s13",
+        "s15"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": true,
+        "problems": [
+          "Answer wording is not clearly in the source; sent for AI verification."
+        ]
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does PDA stand for?",
+      "back": "Posterior descending artery",
+      "citedSpanIds": [
+        "s17",
+        "s19",
+        "s21"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does Cx stand for?",
+      "back": "Circumflex artery (left circumflex)",
+      "citedSpanIds": [
+        "s18",
+        "s20"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    },
+    {
+      "kind": "basic",
+      "front": "What does RMA stand for?",
+      "back": "Right marginal artery",
+      "citedSpanIds": [
+        "s24",
+        "s25"
+      ],
+      "check": {
+        "ok": true,
+        "needsConfirmation": false,
+        "needsModelCheck": false,
+        "problems": []
+      }
+    }
+  ]
+}
