@@ -1,0 +1,24 @@
+# secrets
+.env
+.env.*
+!.env.example
+*.p8
+*.p12
+*.mobileprovision
+# macOS
+.DS_Store
+# Xcode
+DerivedData/
+xcuserdata/
+*.xcuserstate
+build/
+# Node
+node_modules/
+dist/
+coverage/
+# benchmark images may be licensed material: keep local unless permission allows sharing
+eval/benchmark/**/*.jpg
+eval/benchmark/**/*.jpeg
+eval/benchmark/**/*.png
+eval/benchmark/**/*.heic
+eval/benchmark/**/*.pdf

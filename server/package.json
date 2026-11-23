@@ -1,0 +1,11 @@
+{
+  "name": "study-app-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Study App server: AI card pipeline, verification, Anki import/export, sync API",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  }
+}
