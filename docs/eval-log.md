@@ -72,3 +72,8 @@ description beside it ("Left marginal"). Fix: a label's box now also hides the l
 (`addCovers` in `src/core/labels.ts`). The OCR boxes of tightly stacked lines overlap slightly, so a small overlap is now split
 down the middle instead of giving up (`separateMasks`). Checked by drawing the boxes on the page: all text hidden, 0 overlaps;
 a pinpoint of the "g" in "marginal" can show where the M1 and M2 lines touch. 40 tests pass.
+
+### Sam's medical review of run 3 (2026-11-22)
+- "Aortal" → "Aorta" correction confirmed correct.
+- Dropped the text card "What is another name for the LAD artery?" → "Interventricular artery" (it had been flagged "needs AI check").
+- No other problems reported. Final run 3 set for page-001: 5 hidden-label cards + 6 text cards.

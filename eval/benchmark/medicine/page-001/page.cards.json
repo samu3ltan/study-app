@@ -876,23 +876,6 @@
         "needsModelCheck": false,
         "problems": []
       }
-    },
-    {
-      "kind": "basic",
-      "front": "What is another name for the LAD artery?",
-      "back": "Interventricular artery",
-      "citedSpanIds": [
-        "s15",
-        "s11"
-      ],
-      "check": {
-        "ok": true,
-        "needsConfirmation": false,
-        "needsModelCheck": true,
-        "problems": [
-          "Answer wording is not clearly in the source; sent for AI verification."
-        ]
-      }
     }
   ],
   "score": {
@@ -1021,5 +1004,16 @@
       "inference_geo": "global",
       "speed": "standard"
     }
+  },
+  "review": {
+    "date": "2026-11-22",
+    "by": "Sam",
+    "confirmed": [
+      "Aorta (OCR read \"Aortal\")",
+      "all other cards"
+    ],
+    "dropped": [
+      "What is another name for the LAD artery? -> Interventricular artery"
+    ]
   }
 }

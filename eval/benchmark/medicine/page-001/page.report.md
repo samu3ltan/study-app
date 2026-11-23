@@ -29,7 +29,7 @@
    - 2. D2 (Diagonal branches)
    - 3. Left ventricle
 
-## Text cards (7)
+## Text cards (6)
 
 1. [ok] What does LCA stand for? → Left coronary artery
 2. [ok] What does LAD stand for? → Left anterior descending (artery)
@@ -37,5 +37,8 @@
 4. [ok] What does PDA stand for? → Posterior descending artery
 5. [ok] What does RMA stand for? → Right marginal artery
 6. [ok] What does RCA stand for? → Right coronary artery
-7. [needs AI check] What is another name for the LAD artery? → Interventricular artery
-   - Answer wording is not clearly in the source; sent for AI verification.
+
+## Review (2026-11-22, Sam)
+- "Aorta" correction confirmed.
+- Dropped text card "What is another name for the LAD artery?" → "Interventricular artery".
+- All other cards correct.

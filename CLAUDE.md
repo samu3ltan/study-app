@@ -36,7 +36,8 @@
 - Run 3 on page-001: 17/17 labels. Boxes never overlap and hide whole lines of text (Sam confirmed visually).
 - Preview cards as a student sees them: `cd server && node scripts/preview-cards.ts ../eval/benchmark/<subject>/<page>`
   (writes `page.preview.html`; git-ignored because it embeds the page image).
-- Open: "needs AI check" is only a flag (no second AI pass yet); Sam's medical review of run 3 cards pending.
+- Sam reviewed run 3 (2026-11-22): "Aorta" fix confirmed; dropped the "another name for LAD" card.
+- Open: "needs AI check" is only a flag (no second AI pass yet).
 - `page.png` on the Mac differs from the committed copy (same 1117x718 size); left uncommitted, ask Sam which is the source.
 
 ## Status (2026-11-22, chat sandbox)
