@@ -3,13 +3,15 @@
   "subject": "medicine",
   "contentType": "labelled_diagram",
   "topic": "Coronary arteries, anterior view of the heart",
-  "source": "Provided by Sam on 2026-11-22. Original source and license not yet recorded.",
-  "permission": "Internal testing only until the source and license are confirmed. Image file is git-ignored.",
+  "source": "Wikimedia Commons, File:Coronary arteries.svg (rendered PNG, 1117 x 718), https://commons.wikimedia.org/w/index.php?curid=9967381",
+  "permission": "Free to use and share with attribution under CC BY-SA 3.0. Used only as an internal test page; if any version of it is ever shown in the app or marketing, keep the attribution and the same license.",
   "image": "page.png",
   "difficulty": [
     "Labels wrap across 2-4 lines (e.g. 'Left anterior descending (LAD) (or interventricular) artery')",
     "Abbreviations in parentheses next to full names (RCA, LCA, PDA, RMA, LAD, Cx)",
     "Short codes that share one description (M1/M2 'Left marginal arteries', D1/D2 'Diagonal branches')",
     "Two label colours: blue (structures) and dark red (arteries); some labels bold"
-  ]
+  ],
+  "attribution": "Coronary.pdf by Patrick J. Lynch, medical illustrator; derivative work: Fred the Oyster; adaptation and further labeling: Mikael Häggström, M.D.; redrawn by Jmarchn",
+  "license": "CC BY-SA 3.0"
 }
