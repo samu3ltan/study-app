@@ -12,6 +12,8 @@ DerivedData/
 xcuserdata/
 *.xcuserstate
 build/
+.build/
+*.log
 # Node
 node_modules/
 dist/
