@@ -1,0 +1,15 @@
+{
+  "id": "medicine/page-001",
+  "subject": "medicine",
+  "contentType": "labelled_diagram",
+  "topic": "Coronary arteries, anterior view of the heart",
+  "source": "Provided by Sam on 2026-11-22. Original source and license not yet recorded.",
+  "permission": "Internal testing only until the source and license are confirmed. Image file is git-ignored.",
+  "image": "page.png",
+  "difficulty": [
+    "Labels wrap across 2-4 lines (e.g. 'Left anterior descending (LAD) (or interventricular) artery')",
+    "Abbreviations in parentheses next to full names (RCA, LCA, PDA, RMA, LAD, Cx)",
+    "Short codes that share one description (M1/M2 'Left marginal arteries', D1/D2 'Diagonal branches')",
+    "Two label colours: blue (structures) and dark red (arteries); some labels bold"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "reviewedBy": null,
+  "reviewNote": "Drafted by Claude from the image text. Sam to confirm before scores count.",
+  "labels": [
+    { "text": "Superior vena cava" },
+    { "text": "Aorta" },
+    { "text": "Right atrium" },
+    { "text": "Right coronary artery (RCA)", "aliases": ["Right coronary artery", "RCA"] },
+    { "text": "Posterior descending artery (PDA)", "aliases": ["Posterior descending artery", "PDA"] },
+    { "text": "Right marginal artery (RMA)", "aliases": ["Right marginal artery", "RMA"] },
+    { "text": "Right ventricle" },
+    { "text": "Left pulmonary artery" },
+    { "text": "Left pulmonary veins" },
+    { "text": "Left coronary artery (LCA)", "aliases": ["Left coronary artery", "LCA"] },
+    { "text": "Left anterior descending (LAD) (or interventricular) artery", "aliases": ["Left anterior descending artery", "LAD", "Anterior interventricular artery"] },
+    { "text": "(Left) circumflex artery (Cx)", "aliases": ["Left circumflex artery", "Circumflex artery", "Cx"] },
+    { "text": "M1", "group": "Left marginal arteries" },
+    { "text": "M2", "group": "Left marginal arteries" },
+    { "text": "D1", "group": "Diagonal branches" },
+    { "text": "D2", "group": "Diagonal branches" },
+    { "text": "Left ventricle" }
+  ],
+  "notTargets": [],
+  "scoring": "A generated occlusion card matches a label if its answer equals the label text or an alias (after normalization). Recall = matched labels / 17. Any card whose answer is not on the page counts as an error."
+}

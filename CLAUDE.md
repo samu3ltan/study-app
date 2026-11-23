@@ -49,7 +49,7 @@
    If origin/main doesn't exist yet, commit everything here and push.
 3. `cd server && npm test`: all tests must pass on the Mac too.
 4. `swift build -c release --package-path tools/ocr`; fix compile errors if any.
-5. Check `.env` has ANTHROPIC_API_KEY (don't print it). Run the first page:
-   `swift run -c release --package-path tools/ocr ocr eval/benchmark/<subject>/<page>/page.jpg > eval/benchmark/<subject>/<page>/page.ocr.json`
+5. `.env` has ANTHROPIC_API_KEY (verified 2026-11-22; never print it). First page is `eval/benchmark/medicine/page-001/page.png` (coronary arteries diagram, 17 expected labels in `expected.json`). Run:
+   `swift run -c release --package-path tools/ocr ocr eval/benchmark/<subject>/<page>/page.jpg (or page.png) > eval/benchmark/<subject>/<page>/page.ocr.json`
    then `cd server && node scripts/cards-from-ocr.ts ../eval/benchmark/<subject>/<page>/page.ocr.json --subject <subject>`.
 6. Show Sam the cards and every problem the verifier found, in plain language. Ask what looks wrong.
