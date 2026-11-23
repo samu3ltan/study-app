@@ -22,6 +22,13 @@ Requires Node 22.18+ (runs TypeScript directly, no build step).
 - `src/pipeline/cardWriter.ts`: OCR spans -> Anthropic (Claude Haiku 5.5) -> draft cards -> verifier
 - `scripts/cards-from-ocr.ts`: run one page end to end from the OCR JSON made by `../tools/ocr`
 
+## Run one page (from the StudyApp folder)
+    swift build -c release --package-path tools/ocr
+    P=eval/benchmark/medicine/page-001
+    tools/ocr/.build/release/ocr $P/page.png --small $P/page.small.jpg > $P/page.ocr.json
+    cd server && node scripts/run-page.ts ../$P --subject medicine --mode fast --group 4
+Writes `page.cards.json` and a plain-language `page.report.md` into the page folder.
+
 ## Next
 1. Compile and test `../tools/ocr` on the Mac
 2. Send the page image too (not just OCR text) for label/caption decisions; compare Gemini Flash

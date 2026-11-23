@@ -35,8 +35,12 @@
 - `server/`: core types, Vision box geometry, Anki image-occlusion format, subject profiles,
   deterministic card verifier, Anthropic card writer (dependency-free, uses fetch, forced tool call
   for JSON), `.env` loader, CLI `scripts/cards-from-ocr.ts`. 20 tests pass (`cd server && npm test`).
-- `tools/ocr/`: Swift command-line OCR using Apple Vision. Written in a Linux sandbox, NEVER COMPILED:
-  the first Mac session must build it and fix any compile errors.
+- `tools/ocr/`: Swift command-line OCR using Apple Vision. v1 compiled and ran on Sam's Mac 2026-11-22.
+  v2 (word boxes, --small JPEG) written in the chat sandbox; needs a rebuild on the Mac.
+- Node is installed on Sam's Mac (official LTS installer, 2026-11-22).
+- Chat sessions can't call the Anthropic API with Sam's key (sandbox proxy blocks user keys):
+  runs that call the API happen in Sam's own Terminal or in Claude Code on the Mac.
+- Run a page: see `server/README.md` ("Run one page").
 - GitHub: `samu3ltan/study-app` (private). The first commit was made in the chat sandbox; pushing needs
   the Claude GitHub App to have access to this repo.
 

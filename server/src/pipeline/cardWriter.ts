@@ -1,4 +1,4 @@
-import type { CardKind, CheckResult, DraftCard, OcrSpan } from "../core/types.ts";
+import type { CardKind, CheckedCardLike, DraftCard, Label, OcrSpan } from "../core/types.ts";
 import type { SubjectProfile } from "../core/subjects/index.ts";
 import { checkCard } from "../core/verify.ts";
 
@@ -15,11 +15,12 @@ export type WriteOptions = {
   mode: Mode;
   apiKey: string;
   model?: string; // default: claude-haiku-5-5
-  maxCards?: number; // cap per page to prevent card bloat
+  maxCards?: number; // cap per page to prevent card bloat (labels don't count)
+  labels?: Label[]; // when given, labels are already covered: write text cards only
   fetchImpl?: typeof fetch;
 };
 
-export type CheckedCard = DraftCard & { check: CheckResult };
+export type CheckedCard = CheckedCardLike;
 
 export const DEFAULT_MODEL = "claude-haiku-5-5";
 const API_URL = "https://api.anthropic.com/v1/messages";
@@ -55,8 +56,16 @@ export function buildRequest(opts: WriteOptions): Record<string, unknown> {
     "You write spaced-repetition flashcards from ONE photographed study page.",
     "You only see the page as OCR spans: [id] text (position). Every fact must come from these spans.",
     "Never add knowledge that is not on the page. If something is unclear, skip it.",
-    "Labels on a diagram (short names placed around a figure) become occlusion cards: back = the exact label text, occlusionSpanIds = that label's span id(s).",
-    "Titles, figure captions and legends are not labels.",
+    ...(opts.labels
+      ? [
+          `These diagram labels already have their own cards: ${opts.labels.map((l) => l.text).join("; ")}.`,
+          "Do NOT make occlusion cards. Make only basic or cloze cards about OTHER facts on the page (for example what an abbreviation stands for, or how parts relate), and only when the page states them.",
+        ]
+      : [
+          "Labels on a diagram (short names placed around a figure) become occlusion cards: back = the exact label text, occlusionSpanIds = that label's span id(s).",
+          "Titles, figure captions and legends are not labels.",
+        ]),
+    "Never put the answer, or words from it, in the question.",
     `Make at most ${maxCards} cards, choosing the most important facts first.`,
     opts.mode === "learn"
       ? "Learn mode: prefer cards that ask how or why, plus the key labels."
@@ -122,6 +131,7 @@ export async function writeCards(opts: WriteOptions): Promise<{ cards: CheckedCa
   }
   const json = (await res.json()) as { usage?: unknown };
   const spanMap = new Map(opts.spans.map((s) => [s.id, s]));
-  const cards = parseResponse(json).map((c) => ({ ...c, check: checkCard(c, spanMap, opts.subject) }));
+  const drafted = parseResponse(json).filter((c) => !(opts.labels && c.kind === "occlusion"));
+  const cards = drafted.map((c) => ({ ...c, check: checkCard(c, spanMap, opts.subject) }));
   return { cards, usage: json.usage };
 }

@@ -153,5 +153,27 @@ export function checkCard(
     }
   }
 
+  // 7. The question must not give away its own answer.
+  if (card.kind === "occlusion") {
+    const generic = new Set(["artery", "arteries", "veins", "hidden", "label", "labels", "structure"]);
+    const front = normalize(plain(card.front));
+    const leaked = contentWords(card.back).filter((w) => w.length >= 5 && !generic.has(w) && front.includes(w));
+    if (leaked.length > 0) {
+      problems.push(`The question gives away the answer ("${leaked[0]}").`);
+      ok = false;
+    }
+  } else {
+    const frontPlain = normalize(plain(card.kind === "cloze" ? card.front.replace(/\{\{c\d+::.*?\}\}/g, " ") : card.front));
+    const answers = card.kind === "cloze" ? extractClozeAnswers(card.front) : [card.back];
+    for (const a of answers) {
+      const an = normalize(plain(a));
+      if (an.length >= 4 && frontPlain.includes(an)) {
+        problems.push("The question gives away its own answer.");
+        ok = false;
+        break;
+      }
+    }
+  }
+
   return { ok, needsConfirmation, needsModelCheck, problems };
 }

@@ -11,6 +11,8 @@
 | 2026-11-20 | Apple Developer Program: enroll as an individual | Fastest route; can move to a company later | Sam |
 | 2026-11-20 | Sam reviews medical accuracy of benchmark cards; human security review under consideration | Domain expertise; AI-written security code needs a human check | Sam |
 | 2026-11-20 | Product serves medicine AND the sciences (biology, chemistry, physics...) | Wider market; same core workflow | Sam |
+| 2026-11-22 | Benchmark test setting: one hidden-label card hides 3-4 neighbouring labels (group size is a setting; hide-one stays available and will be compared) | Fewer cards to review; evidence favours hide-one, so both will be measured | Sam |
+| 2026-11-22 | A multi-name label such as "Left anterior descending (LAD) (or interventricular) artery" counts as ONE label/card | Matches how the diagram presents it | Sam |
 
 Proposed, not yet confirmed: beachhead = US M1/M2 students with labelled diagrams; free Anki export;
 no ECG interpretation or patient data at launch; Free + Plus $7.99/mo or $49.99/yr.

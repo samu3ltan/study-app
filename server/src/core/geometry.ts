@@ -59,3 +59,19 @@ export function toAnkiOcclusion(masks: Rect[]): string {
     )
     .join("<br>");
 }
+
+/**
+ * Anki image-occlusion field for grouped cards: masks in the same group share one cloze
+ * number, so one Anki card hides the whole group (e.g. 3-4 neighbouring labels).
+ */
+export function toAnkiOcclusionGroups(groups: Rect[][]): string {
+  const fmt = (n: number) => String(round4(n)).replace(/^0\./, ".");
+  return groups
+    .flatMap((g, i) =>
+      g.map(
+        (m) =>
+          `{{c${i + 1}::image-occlusion:rect:left=${fmt(m.left)}:top=${fmt(m.top)}:width=${fmt(m.width)}:height=${fmt(m.height)}:oi=1}}`,
+      ),
+    )
+    .join("<br>");
+}

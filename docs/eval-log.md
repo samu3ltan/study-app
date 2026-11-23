@@ -17,10 +17,15 @@ Raw outputs: `eval/benchmark/medicine/page-001/runs/2026-11-22-run1/`.
 | Correct rejections | 2 (model rephrased LAD and Cx labels instead of copying them) |
 | Cost | 1,786 input + 1,118 output tokens, about $0.0007 |
 
-### Fixes queued
+### Fixes built (2026-11-22, pending run 2)
 1. Occlusion cards made by code, not the model: one card per label, and labels don't count toward the card cap.
    The model only groups OCR lines into labels and splits shared codes (M1/M2, D1/D2).
 2. Send the page image with the OCR text so the model can spot OCR misreads; any corrected label text
    is shown to the user and needs a tap to confirm.
 3. New verifier rule: reject a card whose front contains its own answer.
 4. OCR clean-up flags: stray single characters at the end of a label near a line ("l", "|", ".") need confirmation.
+
+Built: OCR v2 (word boxes + small JPEG for the AI), layout step with the page image (`src/pipeline/layout.ts`),
+code-built hidden-label cards with uniform masks and grouping (`src/core/labels.ts`, default group size 1;
+this test uses 4), "question gives away the answer" rule, answer-key scoring (`src/eval/score.ts`),
+one-command runner `scripts/run-page.ts` with a plain-language report. 35 tests pass.
